@@ -1,0 +1,390 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #1e1e1e; /* dark background */
+    color: #f5f5f5;            /* bright default text */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 350px;
+    background-color: #111;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 40px;
+    padding: 20px;
+    text-align: center;
+    color: #0ef; /* neon aqua */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 20px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #aaa; /* sidebar links */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+    padding: 15px;
+}
+
+.nav-links a:hover {
+    color: #0ef;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #222;
+    overflow-y: auto;
+    color: #f5f5f5; /* main content text */
+}
+
+.card {
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    color: #f5f5f5;
+}
+
+/* Login Container */
+.login-container {
+    width: 100%;       
+    max-width: 450px;  
+    min-width: 300px;  
+    margin: 100px auto;
+    padding: 25px;
+    background: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* Login Heading */
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0ef;   /* neon aqua */
+}
+
+/* Labels */
+.login-container label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    color: #0ef;   
+    font-weight: bold;
+    padding: 15px;
+}
+
+
+
+
+/* Inputs */
+/* .login-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0ef;
+    border-radius: 6px;
+    background-color:  #2a2a2a;
+    color: #fff;   
+    font-size: 14px;
+} */
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0ef;
+    border-radius: 6px;
+    background-color: #f5f5f5 !important; /* force same background */
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-container input::placeholder {
+    color: #888;    
+}
+
+.login-container input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+}
+
+/* Button */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 30px;
+    background-color: rgb(43, 171, 180);
+    color: #111;    /* dark button text */
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #4CAF50;
+    color: #fff;   /* white on hover */
+}
+
+.login-container p {
+    margin-top: 15px;   
+    margin-bottom: 15px; 
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-container p a {
+    color: rgb(43, 171, 180)!important;
+}
+
+.login-container p a:hover{
+    color: #4CAF50!important;
+}
+
+/* Force all login text colors to prevent inheritance issues */
+.login-container label,
+.login-container button,
+.login-container h2 {
+    color: inherit !important;
+}
+
+.login-container input {
+    color: #111 !important;  /* black text */
+    background-color: #f5f5f5 !important;
+}
+
+/* -----------expense.css-------------- */
+/* Expense Page Styles */
+.expense-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    color: #f5f5f5;
+}
+
+.expense-container h2, 
+.expense-container h3 {
+    text-align: center;
+    color: #0ef;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.expense-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.expense-form label {
+    font-weight: bold;
+    color: #0ef;
+}
+
+.expense-form input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #0ef;
+    background: #222;
+    color: #fff;
+    font-size: 14px;
+}
+
+.expense-form input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+}
+
+.expense-form button {
+    padding: 12px;
+    background-color: rgb(43, 171, 180);
+    color: #111;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.expense-form button:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* Table */
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.expense-table th, 
+.expense-table td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: center;
+}
+
+.expense-table th {
+    background: #111;
+    color: #0ef;
+}
+
+.expense-table tr:nth-child(even) {
+    background: #3a3a3a;
+}
+
+.expense-table tr:nth-child(odd) {
+    background: #2a2a2a;
+}
+
+.expense-table tr:hover {
+    background: #444;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-buttons a,
+.action-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background-color: #1e90ff; /* blue */
+    color: #fff;
+}
+
+.edit-btn:hover {
+    background-color: #4682b4;
+}
+
+.delete-btn {
+    background-color: #e63946; /* red */
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* ----- edit expense -------------- */
+
+.edit-container {
+    max-width: 500px;
+    margin: 80px auto;
+    background: #2a2a2a;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    color: #f5f5f5;
+}
+
+.edit-container h2 {
+    text-align: center;
+    color: #0ef;
+    margin-bottom: 20px;
+}
+
+.edit-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-container label {
+    color: #0ef;
+    font-weight: bold;
+}
+
+.edit-container input {
+    padding: 10px;
+    border: 1px solid #0ef;
+    border-radius: 6px;
+    background: #f5f5f5;
+    color: #111;
+    font-size: 14px;
+}
+
+.edit-container input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+    outline: none;
+}
+
+.edit-container button {
+    padding: 12px;
+    background-color: rgb(43, 171, 180);
+    color: #111;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-container button:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.cancel-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #777;
+}

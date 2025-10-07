@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}Signup Page{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h2 class="sign-in">Register here</h2>
+
+    {% if error %}
+        <p style="color:red; text-align:center;">{{ error }}</p>
+    {% endif %}
+
+    <form method="post" action="/signup">
+        <label for="name">Enter your Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="username">Enter your Email</label>
+        <input type="email" id="username" name="username" required>
+
+        <label for="password">Enter Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="password_repeat">Re-enter Password</label>
+        <input type="password" id="password_repeat" name="password_repeat" required>
+
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="/login"> Login here!<a></p>
+    </form>
+
+</div>
+{% endblock %}

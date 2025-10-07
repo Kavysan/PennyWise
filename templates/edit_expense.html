@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Expense edit
+{% endblock %}
+
+{% block content %}
+<div class="edit-container">
+    <h2>Edit Expense</h2>
+
+    <form method="post" action="/expense/edit/{{ expense.id }}">
+        <label for="expense_item">Title</label>
+        <input type="text" id="expense_item" name="expense_item" value="{{ expense.expense_item }}" required>
+
+        <label for="cost">Amount</label>
+        <input type="number" id="cost" name="cost" step="0.01" value="{{ expense.cost }}" required>
+
+        <button type="submit">Update Expense</button>
+        <a href="/expense" class="cancel-btn">Cancel</a>
+    </form>
+</div>
+{% endblock %}
+

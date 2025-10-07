@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    <title>Navbar Layout Page</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <h2>Welcome</h2>
+            <ul class="nav-links">
+                <li><a href="/expense">💵 Expenses</a></li>
+
+                {% if user %}
+                    <li><a href="/logout">👋 Logout</a></li>
+                {% else %}
+                    <li><a href="/login">👤 Login</a></li>
+                    <li><a href="/signup">👤 Sign up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        {% block content %}
+        <div class="card">
+            <h1>Default Content</h1>
+            <p>This will be replaced by child templates.</p>
+        </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

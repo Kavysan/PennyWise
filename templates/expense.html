@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+
+<div class="expense-container">
+    <h2>💵 Expense Tracker</h2>
+
+    {% if error %}
+        <p style="color:red; text-align:center;">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+        <p style="color:lightgreen; text-align:center;">{{ success }}</p>
+    {% endif %}
+
+    <!-- Add Expense Form -->
+    <form method="post" action="/expense/add" class="expense-form">
+        <label for="expense_item">Expense Item</label>
+        <input type="text" id="expense_item" name="expense_item" required>
+
+        <label for="cost">Cost</label>
+        <input type="number" id="cost" name="cost" step="0.01" required>
+
+        <button type="submit">➕ Add Expense</button>
+    </form>
+
+    <!-- Expenses Table -->
+    <h3>Your Expenses</h3>
+    <table class="expense-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Cost</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.expense_item }}</td>
+                <td>{{ expense.cost }}</td>
+                <td>
+                    <div class="action-buttons">
+                        <a href="/expense/edit/{{ expense.id }}" class="edit-btn">✏ Edit</a>
+                        <form method="post" action="/expense/delete/{{ expense.id }}" style="display:inline;">
+                            <button type="submit" class="delete-btn">🗑 Delete</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
